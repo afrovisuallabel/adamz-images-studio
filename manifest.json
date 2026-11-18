@@ -1,0 +1,13 @@
+{
+  "background_color": "#178a00",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "adamz images studio",
+  "orientation": "any",
+  "scope": "//adamz-images-studio/",
+  "short_name": "Adamz Images",
+  "start_url": "//adamz-images-studio/",
+  "theme_color": "#ffffff",
+  "id": "/adamz-images-studio/",
+  "description": "Adamz Images Studio is a professional photography and videography studio based in Huye, Rwanda."
+}
