@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <title>Adamz Images Studio | Photography & Film</title>
+  <meta name="description" content="Professional wedding, portrait, event photography and video services in Huye, Rwanda.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c;
+      --card: #161616;
+      --border: #262626;
+      --text: #f3f3f3;
+      --muted: #a3a3a3;
+      --gold: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-dark: #aa8c2c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    h1, h2, h3, .brand { font-family: 'Playfair Display', serif; }
+    a { color: inherit; text-decoration: none; }
+    
+    .topbar { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(12,12,12,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .brand { display: flex; align-items: center; gap: 0.8rem; font-weight: 700; letter-spacing: 1px; }
+    .brand-mark { background: var(--gold); color: #000; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; }
+    .brand small { display: block; font-size: 0.6rem; color: var(--muted); letter-spacing: 2px; font-family: 'DM Sans', sans-serif; }
+    
+    nav { display: flex; gap: 2rem; align-items: center; }
+    nav a { color: var(--muted); transition: 0.3s; font-size: 0.95rem; }
+    nav a:hover { color: var(--gold); }
+    .nav-admin, .btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 0.6rem 1.2rem; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; font-size: 0.9rem; }
+    .nav-admin:hover, .btn.outline:hover { background: var(--gold); color: #000; }
+    .btn.gold { background: var(--gold); color: #000; }
+    .btn.gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: #fff; }
+    
+    .menu-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+    main { padding-top: 5rem; }
+    .section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+    
+    .hero { min-height: 85vh; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 4rem; padding: 0 5%; max-width: 1300px; margin: 0 auto; }
+    .eyebrow { color: var(--gold); font-size: 0.8rem; letter-spacing: 3px; font-weight: 600; margin-bottom: 1rem; }
+    .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-text { color: var(--muted); margin-bottom: 2rem; font-size: 1.1rem; }
+    .hero-actions { display: flex; gap: 1rem; margin-bottom: 2rem; }
+    .location { font-size: 0.75rem; letter-spacing: 2px; color: var(--muted); }
+    
+    .hero-frame { width: 100%; height: 420px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; position: relative; }
+    .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+    .intro { text-align: center; max-width: 800px; }
+    .intro h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .intro h2 em { color: var(--gold); font-style: italic; }
+
+    .section-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+    .section-head h2 { font-size: 2.2rem; }
+    .section-head h2 em { color: var(--gold); font-style: italic; }
+
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .gallery-card { height: 350px; background: var(--card); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: flex-end; padding: 2rem; position: relative; overflow: hidden; }
+    .gallery-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .gallery-card:hover img { transform: scale(1.05); }
+    .gallery-card span { font-weight: 600; letter-spacing: 2px; background: rgba(0,0,0,0.7); color: #fff; padding: 0.5rem 1rem; border-radius: 4px; backdrop-filter: blur(5px); z-index: 2; }
+
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .service-grid article { background: var(--card); border: 1px solid var(--border); padding: 2.5rem; border-radius: 6px; }
+    .service-grid article b { color: var(--gold); font-size: 1.2rem; display: block; margin-bottom: 1rem; }
+    .service-grid article h3 { margin-bottom: 0.8rem; font-size: 1.3rem; }
+    .service-grid article p { color: var(--muted); font-size: 0.95rem; }
+
+    .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .package { background: var(--card); border: 1px solid var(--border); padding: 3rem 2rem; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+    .package.featured { border-color: var(--gold); }
+    .package h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+    .price { font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 2rem; font-family: 'Playfair Display', serif; }
+    .price small { font-size: 0.9rem; font-family: 'DM Sans', sans-serif; color: var(--muted); }
+    .package ul { list-style: none; margin-bottom: 2.5rem; }
+    .package ul li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 0.95rem; }
+    
+    .booking-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 4rem; margin: 4rem 5%; max-width: 1200px; }
+    .booking-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .booking-section h2 em { color: var(--gold); font-style: italic; }
+    .booking-note { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); border-left: 2px solid var(--gold); padding-left: 1rem; }
+    
+    .booking-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .booking-form label { display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+    .booking-form label.wide { grid-column: span 2; }
+    .booking-form input, .booking-form select, .booking-form textarea { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.8rem; border-radius: 4px; font-family: inherit; font-size: 0.95rem; }
+    .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus { outline: none; border-color: var(--gold); }
+    .form-message { grid-column: span 2; font-size: 0.9rem; }
+
+    footer { background: #080808; border-top: 1px solid var(--border); padding: 4rem 5%; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    footer p { color: var(--muted); font-size: 0.9rem; }
+    footer small { color: #666; font-size: 0.8rem; }
+
+    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+    .modal.hidden { display: none; }
+    .modal-card { background: var(--card); border: 1px solid var(--border); padding: 2.5rem; width: 100%; max-width: 600px; border-radius: 8px; position: relative; max-height: 90vh; overflow-y: auto; }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+    @media(max-width: 900px) {
+      .hero, .booking-section { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 5%; }
+      nav { display: none; }
+      .menu-toggle { display: block; }
+      .gallery { grid-template-columns: 1fr; }
+      .booking-form { grid-template-columns: 1fr; }
+      .booking-form label.wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-mark">A</span><span>ADAMZ <b>IMAGES</b><small>STUDIO</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  <nav id="nav">
+    <a href="#work">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#packages">Packages</a>
+    <a href="#booking">Book now</a>
+    <button class="nav-admin" id="adminOpen">Admin</button>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <p class="eyebrow">PHOTOGRAPHY · VIDEOGRAPHY · STORYTELLING</p>
+    <h1>Moments become<br><em>memories.</em></h1>
+    <p class="hero-text">We capture your most meaningful moments with creativity, precision and timeless style.</p>
+    <div class="hero-actions">
+      <a class="btn gold" href="#booking">Book a session</a>
+      <a class="btn outline" href="#work">Explore our work</a>
+    </div>
+    <p class="location">HUYE, RWANDA · TEL: 0789343304 · AVAILABLE FOR TRAVEL</p>
+  </div>
+  <div class="hero-art">
+    <div class="hero-frame">
+      <img src="BOOKING_ FOR_ WEDDING _ SEND-OFF _ ENGAGEMENT _ KITCHEN PARTY _ GRADUATION 🎓 ____ Photography & Videography_Our office located at Arusha kijenge cocoriko_Contact us _ +255 784 234 707 (4).jfif" alt="Adamz Images Studio Wedding Photography">
+    </div>
+  </div>
+</section>
+
+<section class="intro section">
+  <p class="eyebrow">WELCOME TO ADAMZ IMAGES STUDIO</p>
+  <h2>Every frame has a story.<br><em>Let us tell yours.</em></h2>
+  <p>From intimate celebrations to major events, we create photographs and films that help you relive the feeling, not just the moment.</p>
+</section>
+
+<section class="section work" id="work">
+  <div class="section-head">
+    <div><p class="eyebrow">SELECTED WORK</p><h2>Stories in <em>focus.</em></h2></div>
+    <p>Huye, Rwanda</p>
+  </div>
+  <div class="gallery">
+    <div class="gallery-card">
+      <img src="Wedding party (5).jfif" alt="Wedding Photography">
+      <span>WEDDINGS</span>
+    </div>
+    <div class="gallery-card">
+      <img src="BOOKING_ FOR_ WEDDING _ SEND-OFF _ ENGAGEMENT _ KITCHEN PARTY _ GRADUATION 🎓 ____ Photography & Videography_Our office located at Arusha kijenge cocoriko_Contact us _ +255 784 234 707 (3).jfif" alt="Portraits">
+      <span>PORTRAITS</span>
+    </div>
+    <div class="gallery-card">
+      <img src="Wedding party (1).jfif" alt="Events">
+      <span>EVENTS</span>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <p class="eyebrow">WHAT WE DO</p>
+  <h2>Made to keep <em>forever.</em></h2>
+  <div class="service-grid">
+    <article><b>01</b><h3>Wedding Photography</h3><p>Beautiful coverage of your day, from preparations to celebration.</p></article>
+    <article><b>02</b><h3>Portrait Sessions</h3><p>Personal, couple, family and graduation portraits.</p></article>
+    <article><b>03</b><h3>Events & Concerts</h3><p>Professional coverage for ceremonies, performances and special events.</p></article>
+    <article><b>04</b><h3>Videography</h3><p>Cinematic films and highlights that preserve the atmosphere.</p></article>
+  </div>
+</section>
+
+<section class="section packages" id="packages">
+  <p class="eyebrow">CHOOSE YOUR EXPERIENCE</p>
+  <h2>Packages & <em>investment.</em></h2>
+  <p class="section-note">Hitamo package ikunogeye cyangwa utwandikire kugira ngo tubiganireho.</p>
+  <div class="package-grid">
+    <article class="package">
+      <p class="eyebrow">PACKAGE NTOYA</p>
+      <h3>Classic</h3>
+      <div class="price">250,000 <small>RWF</small></div>
+      <ul>
+        <li>Photography coverage</li>
+        <li>Edited photo collection</li>
+        <li>Highlight options</li>
+        <li>Booking consultation</li>
+      </ul>
+      <button class="btn outline choose-package" data-package="Classic">Choose Classic</button>
+    </article>
+    <article class="package featured">
+      <p class="eyebrow">PACKAGE ININI</p>
+      <h3>Luxury</h3>
+      <div class="price">500,000 <small>RWF</small></div>
+      <ul>
+        <li>Full event coverage</li>
+        <li>Premium photo collection</li>
+        <li>Cinematic video highlights</li>
+        <li>Personal planning & consultation</li>
+      </ul>
+      <button class="btn gold choose-package" data-package="Luxury">Choose Luxury</button>
+    </article>
+  </div>
+</section>
+
+<section class="booking-section section" id="booking">
+  <div>
+    <p class="eyebrow">LET'S CREATE SOMETHING TIMELESS</p>
+    <h2>Reserve your <em>date.</em></h2>
+    <p>Tohereza ubutumwa bwawe bwo gusaba serivisi. Studio izakuvugisha kuri telefone cyangwa email kugira ngo twemeze neza itariki.</p>
+    <div class="booking-note">Tel: 0789343304 | Email: adamiradu45@gmail.com</div>
+  </div>
+  <form id="bookingForm" class="booking-form">
+    <label>Full name<input name="name" required placeholder="Your full name"></label>
+    <label>Phone / WhatsApp<input name="phone" required placeholder="0789343304"></label>
+    <label>Email<input name="email" type="email" value="adamiradu45@gmail.com" placeholder="adamiradu45@gmail.com"></label>
+    <label>Service<select name="service" required><option value="">Select a service</option><option>Wedding photography</option><option>Portrait session</option><option>Graduation</option><option>Event / Concert</option><option>Videography</option></select></label>
+    <label>Preferred date<input name="date" type="date" required></label>
+    <label>Package<select name="package"><option value="Classic">Classic (250,000 RWF)</option><option value="Luxury">Luxury (500,000 RWF)</option></select></label>
+    <label class="wide">Location / additional details<textarea name="details" rows="3" placeholder="Tell us about your event in Huye..."></textarea></label>
+    <button class="btn gold wide" type="submit">Send booking request</button>
+    <p class="form-message wide" id="bookingMessage" aria-live="polite"></p>
+  </form>
+</section>
+</main>
+
+<footer>
+  <a class="brand" href="#home"><span class="brand-mark">A</span><span>ADAMZ <b>IMAGES</b><small>STUDIO</small></span></a>
+  <p>Huye, Rwanda · Tel: 0789343304 · Email: adamiradu45@gmail.com</p>
+  <small>© Adamz Images Studio. All rights reserved.</small>
+</footer>
+
+<div class="modal hidden" id="adminModal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" id="adminClose" aria-label="Close">×</button>
+    <div id="adminLogin">
+      <p class="eyebrow">STUDIO ACCESS</p><h2>Admin <em>dashboard.</em></h2>
+      <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.9rem;">Admin PIN: <b>2468</b></p>
+      <label>Admin PIN<input id="adminPin" type="password" inputmode="numeric" placeholder="Enter PIN"></label>
+      <button class="btn gold full" id="loginBtn" style="width:100%; margin-top:1rem;">Open dashboard</button>
+      <p class="form-message" id="loginMessage"></p>
+    </div>
+    <div id="dashboard" class="hidden">
+      <h2>Dashboard ya Admin</h2>
+      <p style="color:var(--muted); margin: 1rem 0;">Amakuru yose ya booking n'ubwishyu aboneka hano.</p>
+      <div id="bookingList"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('adminOpen').addEventListener('click', () => {
+    document.getElementById('adminModal').classList.remove('hidden');
+  });
+  document.getElementById('adminClose').addEventListener('click', () => {
+    document.getElementById('adminModal').classList.add('hidden');
+  });
+  document.getElementById('loginBtn').addEventListener('click', () => {
+    if(document.getElementById('adminPin').value === '2468') {
+      document.getElementById('adminLogin').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      document.getElementById('bookingList').innerHTML = '<p style="color:var(--gold);">Winjiye neza! Nimero yawe: 0789343304, Email: adamiradu45@gmail.com</p>';
+    } else {
+      document.getElementById('loginMessage').textContent = 'PIN siyo (Gerageza 2468)';
+      document.getElementById('loginMessage').style.color = 'red';
+    }
+  });
+  document.querySelectorAll('.choose-package').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelector('select[name="package"]').value = e.target.getAttribute('data-package');
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  document.getElementById('bookingForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('bookingMessage').style.color = 'var(--gold)';
+    document.getElementById('bookingMessage').textContent = 'Ubutumwa bwawe bwo gusaba serivisi bwoherejwe neza kuri adamiradu45@gmail.com / 0789343304!';
+    e.target.reset();
+  });
+</script>
+</body>
+</html>
